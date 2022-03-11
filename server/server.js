@@ -10,11 +10,11 @@ app.use(express.json());
 
 const pizzasRoute = require("./routes/pizzaRoute");
 const userRoute = require ("./routes/userRoute");
-const loginRoute = require("./routes/loginRoute");
+
 
 app.use('/api/pizzas/',pizzasRoute)
 app.use('/api/users/',userRoute)
-app.use('/api/users/',loginRoute)
+
 
 
 app.get("/", (req, res) => {
