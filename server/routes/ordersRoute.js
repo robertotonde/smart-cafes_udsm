@@ -37,7 +37,7 @@ router.post("/placeorder", async (req, res) => {
 
             name : currentUser.name,
             email : currentUser.email,
-            userid : currentUser.id,
+            userid : currentUser._id,
             orderItems : cartItems,
             orderAmount : subtotal ,
             shippingAddress : {
@@ -62,4 +62,19 @@ router.post("/placeorder", async (req, res) => {
   }
 });
 
+
+
+router.post("/getuserorders", async (req, res) => {
+  
+   const {userid} =  req.body
+
+   try {
+
+    const orders = await Order.find({userid : userid }).sort({_id : -1})
+     res.send(orders)
+   } catch (error) {
+     return res.status(400).json({ message : "something went wrong " })
+   }
+  
+});
 module.exports = router;
