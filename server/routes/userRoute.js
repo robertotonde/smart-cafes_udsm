@@ -25,20 +25,20 @@ router.post('/register', async (req, res) => {
 
 });
 
-router.get('/register', async (req, res) => {
+// router.get('/register', async (req, res) => {
 
-    try {
-        const users = await User.find({})
+//     try {
+//         const users = await User.find({})
 
-        res.send(users)
-    } catch (error) {
+//         res.send(users)
+//     } catch (error) {
 
-        return res.status(400).json({ message : error  })
+//         return res.status(400).json({ message : error  })
         
-    }
+//     }
 
 
-});
+// });
 
 
 
