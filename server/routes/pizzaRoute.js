@@ -20,4 +20,23 @@ router.get('/getallpizzas', async (req, res) => {
 
 });
 
+router.post('/uploadPizzas', async (req, res) => {
+   
+    const {name, category,img, description,cafe ,prices ,varients } = req.body;
+ 
+    const newPizza = new Pizza ({name, category,img, description,cafe ,prices ,varients});
+ 
+    try {
+        newPizza.save();
+        res.send('upload pizass successfully')
+     
+        
+    } catch (error) {
+ 
+     return res.status(400).send({ message : error})
+        
+    }
+ 
+ });
+
 module.exports = router;

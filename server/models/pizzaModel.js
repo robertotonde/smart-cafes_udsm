@@ -20,6 +20,11 @@ const pizzaSchema = mongoose.Schema(
       required: true,
     },
 
+    cafe : {
+      type : "String",
+      required : true
+    },
+
     prices: [],
     varients: [],
   },
